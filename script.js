@@ -58,6 +58,8 @@ function grandTotal(subTotalInt,totalVat){
     document.getElementById("total").innerText = "$ "+(subTotalInt+totalVat);
 }
 
+
+
 document.getElementById("book-btn").addEventListener("click",function(){
     if(subTotal()==false){
         alert("Please Select at least one ticket")
