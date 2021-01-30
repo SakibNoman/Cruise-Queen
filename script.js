@@ -1,30 +1,30 @@
-var firstClass = document.getElementById("first-class-input").value;
-var firstClassNumber = parseInt(firstClass);
 
-
-document.getElementById("first-class-plus").addEventListener("click",function(){
-    firstClassNumber++;
-    document.getElementById("first-class-input").value = firstClassNumber;
+document.getElementById("first-class-plus").addEventListener("click", function () {
+    btnPlusMinus("first-class-input",true);
 })
-document.getElementById("first-class-minus").addEventListener("click",function(){
-    if(firstClassNumber){
-        firstClassNumber--;
+
+document.getElementById("first-class-minus").addEventListener("click", function () {
+    btnPlusMinus("first-class-input",false);
+})
+
+document.getElementById("economy-class-plus").addEventListener("click", function () {
+    btnPlusMinus("economy-class-input",true);
+})
+
+document.getElementById("economy-class-minus").addEventListener("click", function () {
+    btnPlusMinus("economy-class-input",false);
+})
+
+function btnPlusMinus(id,isPlus) {
+    var numOfTicket = document.getElementById(id).value;
+    var numOfTicketInt = parseInt(numOfTicket);
+    if(isPlus == true){
+        numOfTicketInt++;
     }
-    document.getElementById("first-class-input").value = firstClassNumber;
-})
-
-
-var economyClass = document.getElementById("economy-class-input").value;
-var economyClassNumber = parseInt(economyClass);
-
-
-document.getElementById("economy-class-plus").addEventListener("click",function(){
-    economyClassNumber++;
-    document.getElementById("economy-class-input").value = economyClassNumber;
-})
-document.getElementById("economy-class-minus").addEventListener("click",function(){
-    if(economyClassNumber){
-        economyClassNumber--;
+    else{
+        if(numOfTicketInt>0){
+            numOfTicketInt--;
+        }
     }
-    document.getElementById("economy-class-input").value = economyClassNumber;
-})
+    document.getElementById(id).value = numOfTicketInt;
+}
